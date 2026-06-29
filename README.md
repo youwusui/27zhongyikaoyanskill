@@ -150,6 +150,14 @@ Copy-Item -Recurse .\skills\kaoyan-xueba-27-notes "$env:USERPROFILE\.codex\skill
 - 1991-2006 年真题当前只有题干切分，没有官方标准答案；答案生成必须依据 2027 学霸笔记证据逐题完成。
 - 以后更新 `SKILL.md` 的能力、流程或资料覆盖时，必须同步更新本 `README.md`，让仓库介绍和实际 skill 行为保持一致。
 
+## 赞助支持
+
+如果你觉得这个 Skill 有用的话，不妨支持一下。你的支持会让我更有动力继续补答案、修 OCR、扩展真题解析和优化复习工作流。
+
+<p align="center">
+  <img src="./assets/wechat-pay.png" alt="微信支付赞助二维码" width="360" />
+</p>
+
 ## 致谢
 
 特别感谢 [JuneYaooo/lineage-skill](https://github.com/JuneYaooo/lineage-skill) 这个 TCM 相关开源项目带来的启发：它证明了中医资料不必只停留在“能搜到文本”的层面，而可以被组织成 Agent 能理解、能检索、能引用、能训练的知识系统。本项目延续这种思路，把 307 中医考研笔记做成更偏复习实战的 Skill：有 OCR，有索引，有证据链，也有出题批改的闭环。
