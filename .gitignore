@@ -8,10 +8,14 @@
 .ocr-test/
 skills/*/references/ocr-cache/
 skills/*/references/ocr-work/
+skills/*/references/*/ocr-work/
+*.sqlite-wal
+*.sqlite-shm
 
 # Python cache
 __pycache__/
 *.py[cod]
 
 # Raw source PDFs are kept locally, not in the skill repo
+历年真题/
 27学霸笔记/

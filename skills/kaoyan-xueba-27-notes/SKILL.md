@@ -45,6 +45,11 @@ Core files:
 - `references/page-map.json` - global page to split-PDF page mapping
 - `references/section-index.csv` - OCR-derived headings and excerpts
 - `references/ocr-status.md` - coverage, engine, and maintenance notes
+- `references/exam-papers/exam-papers.sqlite` - SQLite + FTS database for local historical exam papers
+- `references/exam-papers/exam-pages.jsonl` - page-level exam-paper text/OCR records
+- `references/exam-papers/text/` - per-exam TXT exports
+- `references/exam-papers/legacy-1991-2006-questions.jsonl` - question-level split for the 1991-2006 papers, without verified answers
+- `references/exam-papers-status.md` - exam-paper OCR/import coverage notes
 
 Current OCR state: all 768 PDF pages have records; 767 contain text; the only empty-text page is blank `中医基础理论` PDF page 2.
 
@@ -71,9 +76,16 @@ Current OCR state: all 768 PDF pages have records; 767 contain text; the only em
 ## Quiz Workflow
 
 - When the user asks to generate exam-style questions, do not include answers, answer keys, or explanations in the initial question set unless the user explicitly asks to see them immediately.
+- Before generating questions for a requested topic/range, ask whether to exclude the most recent 5 years of real exam questions. Explain that excluding them preserves the newest papers for later full-paper practice, so the learner can measure improvement on near-current exam material.
+- After the user answers that choice, search the historical exam-paper database for the same knowledge points before writing new questions. Prefer matching real exam questions, then add self-written questions to reach the requested quantity or difficulty mix.
+- When selecting a real exam question, label it with the exam year in the question stem or metadata, such as `【真题：2021年】`.
+- If the user chose to exclude the most recent 5 years, do not include those years in the real-question selection unless the user later overrides that choice.
+- For self-written questions, keep them clearly unlabeled as real exam questions; do not invent years or provenance.
 - After generating questions, ask the user to reply with their selected answers.
 - When the user submits answers, grade them against the notes and provide complete explanations.
-- For every graded item, cite where the evidence appears, using the book name, PDF page number, and relevant OCR text or a faithful paraphrase of that text.
+- For real exam questions, prefer the answer/explanation from the exam-paper database when it exists; then add a synthesized explanation from the 2027 Xueba notes that connects the tested knowledge point, distinctions, and traps.
+- For self-written questions or real questions without source answers, derive the answer from explicit Xueba-note evidence and mark uncertainty if the evidence is weak.
+- For every graded item, cite where the evidence appears, using the exam year/source when applicable plus the book name, PDF page number, and relevant OCR text or a faithful paraphrase from the 2027 Xueba notes.
 - If a question depends on a range such as "某概念及其以前的内容", first locate the topic boundary with TOC/page hits, then build questions only from that bounded source range.
 - Keep answer choices challenging at postgraduate entrance exam difficulty: test concept boundaries, source wording, contrasts, and application, not only isolated memorization.
 
@@ -96,6 +108,22 @@ Current OCR state: all 768 PDF pages have records; 767 contain text; the only em
   ```powershell
   .\.venv-rapidocr\Scripts\python.exe skills\kaoyan-xueba-27-notes\scripts\ocr_progress.py
   ```
+
+- Search historical exam papers:
+
+  ```powershell
+  .\.venv-rapidocr\Scripts\python.exe skills\kaoyan-xueba-27-notes\scripts\search_exam_papers.py --query "阴中求阳" --limit 5
+  ```
+
+## Historical Exam Papers
+
+- The local `历年真题` directory has been imported into `references/exam-papers/`.
+- Use `scripts/search_exam_papers.py` for direct exam-paper lookup and `scripts/answer_lookup.py` for Xueba-note evidence.
+- When answering or grading historical exam questions, cite both the exam-paper location and the Xueba-note evidence when possible.
+- When generating topic drills, search this historical exam-paper corpus first and prefer same-knowledge-point real questions before adding newly written questions.
+- Treat 1991-2006 as question text without a verified source answer key. Derive answers only with explicit evidence from the Xueba notes, and mark uncertain items instead of guessing.
+- Use `references/exam-papers/legacy-1991-2006-questions.jsonl` as the starting queue for 1991-2006 answer derivation; each record has `answer: null` and `answer_status: needs_xueba_evidence` until checked.
+- Later-year PDFs/DOCX may contain answers or explanations in the source text; still verify against the notes when the user asks for source-grounded grading.
 
 ## Maintenance
 
