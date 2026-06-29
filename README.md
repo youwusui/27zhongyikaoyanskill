@@ -121,7 +121,7 @@ Copy-Item -Recurse .\skills\kaoyan-xueba-27-notes "$env:USERPROFILE\.codex\skill
 
 ## 致谢
 
-特别感谢 TCM 相关开源项目带来的启发：它证明了中医资料不必只停留在“能搜到文本”的层面，而可以被组织成 Agent 能理解、能检索、能引用、能训练的知识系统。本项目延续这种思路，把 307 中医考研笔记做成更偏复习实战的 Skill：有 OCR，有索引，有证据链，也有出题批改的闭环。
+特别感谢 [JuneYaooo/lineage-skill](https://github.com/JuneYaooo/lineage-skill) 这个 TCM 相关开源项目带来的启发：它证明了中医资料不必只停留在“能搜到文本”的层面，而可以被组织成 Agent 能理解、能检索、能引用、能训练的知识系统。本项目延续这种思路，把 307 中医考研笔记做成更偏复习实战的 Skill：有 OCR，有索引，有证据链，也有出题批改的闭环。
 
 ## 一句话
 
