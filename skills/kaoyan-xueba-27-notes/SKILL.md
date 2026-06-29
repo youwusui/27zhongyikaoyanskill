@@ -130,4 +130,5 @@ Current OCR state: all 768 PDF pages have records; 767 contain text; the only em
 - OCR is complete. Do not restart OCR unless the user asks to re-OCR pages or improve quality.
 - After forced re-OCR, run `scripts/compact_ocr_outputs.py`, then `scripts/build_section_index.py`.
 - Keep `references/ocr-status.md` current after material OCR/index changes.
+- When changing skill capabilities, workflows, source coverage, or exam-paper behavior, update the repository `README.md` in the same change.
 - Keep this skill lean: put durable procedures in `scripts/`, status in `references/ocr-status.md`, and avoid adding unrelated README-style files.
