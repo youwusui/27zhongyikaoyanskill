@@ -1,0 +1,48 @@
+{
+  "description": "Map the printed/global page numbers shown in the master table of contents to the split PDF files in the local collection.",
+  "toc_source": {
+    "source_pdf": "27学霸笔记—中医基础理论.pdf",
+    "pdf_pages": [5, 6, 7, 8],
+    "note": "These pages contain the master table of contents for the whole collection."
+  },
+  "rules": [
+    {
+      "global_page_start": 1,
+      "global_page_end": 104,
+      "source_pdf": "27学霸笔记—中医基础理论.pdf",
+      "pdf_page_formula": "global_page + 8",
+      "notes": "PDF pages 1-8 are cover/frontmatter/master TOC; printed page 001 starts on PDF page 9."
+    },
+    {
+      "global_page_start": 105,
+      "global_page_end": 214,
+      "source_pdf": "27学霸笔记—中医诊断学.pdf",
+      "pdf_page_formula": "global_page - 104"
+    },
+    {
+      "global_page_start": 215,
+      "global_page_end": 303,
+      "source_pdf": "27学霸笔记—中药学.pdf",
+      "pdf_page_formula": "global_page - 214"
+    },
+    {
+      "global_page_start": 304,
+      "global_page_end": 463,
+      "source_pdf": "27学霸笔记—方剂学.pdf",
+      "pdf_page_formula": "global_page - 303"
+    },
+    {
+      "global_page_start": 464,
+      "global_page_end": 625,
+      "source_pdf": "27学霸笔记—中医内科学.pdf",
+      "pdf_page_formula": "global_page - 463"
+    },
+    {
+      "global_page_start": 626,
+      "global_page_end": 760,
+      "source_pdf": "27学霸笔记—针灸与人文.pdf",
+      "pdf_page_formula": "global_page - 625",
+      "notes": "The master TOC lists entries through printed page 736; the split PDF contains additional trailing pages through page 760 by file page count."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "27学霸笔记",
+  "skill": "kaoyan-xueba-27-notes",
+  "source_root": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记",
+  "privacy_rule": "Only use this collection when the user explicitly mentions 27学霸笔记, $kaoyan-xueba-27-notes, or asks to use this exact skill/database.",
+  "created": "2026-06-24",
+  "ocr_status": {
+    "method": "pypdf extract_text on first, middle, and last page of each PDF",
+    "result": "No sampled page returned extractable text.",
+    "recommendation": "OCR is required for full-text search and content-grounded answers."
+  },
+  "indexes": {
+    "file_inventory": "references/file-inventory.csv",
+    "master_toc": "references/toc-index.csv",
+    "page_map": "references/page-map.json",
+    "ocr_status": "references/ocr-status.md"
+  },
+  "files": [
+    {
+      "subject": "方剂学",
+      "filename": "27学霸笔记—方剂学.pdf",
+      "pages": 160,
+      "size_mb": 360.2,
+      "text_layer_status": "not_detected",
+      "ocr_recommendation": "needed_for_full_text_search",
+      "absolute_path": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记\\27学霸笔记—方剂学.pdf"
+    },
+    {
+      "subject": "针灸与人文",
+      "filename": "27学霸笔记—针灸与人文.pdf",
+      "pages": 135,
+      "size_mb": 294.3,
+      "text_layer_status": "not_detected",
+      "ocr_recommendation": "needed_for_full_text_search",
+      "absolute_path": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记\\27学霸笔记—针灸与人文.pdf"
+    },
+    {
+      "subject": "中药学",
+      "filename": "27学霸笔记—中药学.pdf",
+      "pages": 89,
+      "size_mb": 175.6,
+      "text_layer_status": "not_detected",
+      "ocr_recommendation": "needed_for_full_text_search",
+      "absolute_path": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记\\27学霸笔记—中药学.pdf"
+    },
+    {
+      "subject": "中医基础理论",
+      "filename": "27学霸笔记—中医基础理论.pdf",
+      "pages": 112,
+      "size_mb": 253.8,
+      "text_layer_status": "not_detected",
+      "ocr_recommendation": "needed_for_full_text_search",
+      "absolute_path": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记\\27学霸笔记—中医基础理论.pdf"
+    },
+    {
+      "subject": "中医内科学",
+      "filename": "27学霸笔记—中医内科学.pdf",
+      "pages": 162,
+      "size_mb": 354.5,
+      "text_layer_status": "not_detected",
+      "ocr_recommendation": "needed_for_full_text_search",
+      "absolute_path": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记\\27学霸笔记—中医内科学.pdf"
+    },
+    {
+      "subject": "中医诊断学",
+      "filename": "27学霸笔记—中医诊断学.pdf",
+      "pages": 110,
+      "size_mb": 237.7,
+      "text_layer_status": "not_detected",
+      "ocr_recommendation": "needed_for_full_text_search",
+      "absolute_path": "C:\\Users\\41405\\Documents\\考研数据skill制作\\27学霸笔记\\27学霸笔记—中医诊断学.pdf"
+    }
+  ]
+}

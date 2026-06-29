@@ -1,0 +1,17 @@
+# Local runtime environments
+.venv-ocr/
+.venv-ocr2/
+.venv-rapidocr/
+
+# OCR scratch space and logs
+.ocr-logs/
+.ocr-test/
+skills/*/references/ocr-cache/
+skills/*/references/ocr-work/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Raw source PDFs are kept locally, not in the skill repo
+27学霸笔记/

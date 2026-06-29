@@ -1,0 +1,7 @@
+interface:
+  display_name: "27中医307考研学霸笔记知识点简介"
+  short_description: "OCR 知识库，支持速查、出题、批改和原文溯源。"
+  default_prompt: "Use $kaoyan-xueba-27-notes to search the 27中医307考研学霸笔记 OCR knowledge base, cite source pages, and build exam-style drills without revealing answers first."
+
+policy:
+  allow_implicit_invocation: false
